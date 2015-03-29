@@ -3,11 +3,11 @@
 
 分析单个 Node 文件，解析其依赖，并将依赖及原文件合并成一个与 Node 无关的文件
 
-1. 为什么不用 [browserify](http://browserify.org/) 或 [webmake](https://github.com/medikoo/modules-webmake)?
+* 为什么不用 [browserify](http://browserify.org/) 或 [webmake](https://github.com/medikoo/modules-webmake)?
 
 因为它们编译出的文件很丑，而且添加了很多多余的代码。
   
-2. `coding` 有什么特点？
+* `coding` 有什么特点？
   
 __缺点：__
   
@@ -28,6 +28,12 @@ __为什么还要用它：__
 $ npm install --save coding
 ```
 
+or
+
+```bash
+$ npm install --global coding
+```
+
 ## 模块编写风格
 
 * `require`、`module` 和 `exports` 不能被重新定义，也不能创建它们的别名
@@ -38,10 +44,19 @@ $ npm install --save coding
 
 ## 使用
 
+In javascript:
+
 ```javascript
 var coding = require('coding');
 coding(filePath, options); // return compiled file content
 ```
+
+When installed in global 
+
+```bash
+coding [options] <file> // Use coding --help to see more helps
+```
+
 
 ## options
 
@@ -86,7 +101,6 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 * [ast-query](https://github.com/SBoudrias/AST-query) - Tentative to a simple JavaScript AST modification library
 * [ast-types](https://github.com/benjamn/ast-types) - This module provides an efficient, modular, [Esprima](https://github.com/ariya/esprima)-compatible implementation of the [abstract syntax tree](http://en.wikipedia.org/wiki/Abstract_syntax_tree) type hierarchy pioneered by the [Mozilla Parser API](https://developer.mozilla.org/en-US/docs/SpiderMonkey/Parser_API).
 * [ast-traverse](https://github.com/olov/ast-traverse) - Simple but flexible AST traversal with pre and post visitors. Works in node and browsers.
-* [ordered-ast-traverse](https://github.com/olov/ordered-ast-traverse) - Simple but flexible lexically ordered AST traversal with pre and post visitors
 
 
 

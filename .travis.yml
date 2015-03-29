@@ -3,9 +3,12 @@ env: CI=true
 sudo: false
 node_js:
   - '0.10'
+  - '0.11'
+  - '0.12'
+  - 'iojs'
 after_script:
   - npm run coveralls
 notifications:
   email:
-    - zhongleiqiu@gmail.com
+    - qiuzhongleiabc@126.com
 
