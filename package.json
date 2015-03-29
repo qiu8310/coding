@@ -1,0 +1,56 @@
+{
+  "name": "coding",
+  "description": "分析单个 Node 文件，解析其依赖，并将依赖及原文件合并成一个与 Node 无关的文件",
+  "version": "0.0.1",
+  "homepage": "https://github.com/qiu8310/coding",
+  "bugs": "https://github.com/qiu8310/coding/issues",
+  "license": "MIT",
+  "main": "src/coding.js",
+  "author": {
+    "name": "Zhonglei Qiu",
+    "email": "zhongleiqiu@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qiu8310/coding"
+  },
+  "keywords": [
+    "coding",
+    "module",
+    "concat",
+    "node",
+    "mod"
+  ],
+  "dependencies": {
+    "commander": "^2.7.1",
+    "dep.js": "0.0.2",
+    "escodegen": "^1.6.1",
+    "esprima": "^2.1.0",
+    "estraverse": "^3.1.0",
+    "lodash": "^3.5.0",
+    "require-resolve": "0.0.2",
+    "x-path": "0.0.2"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.1",
+    "gulp": "^3.8.8",
+    "gulp-bump": "^0.1.11",
+    "gulp-istanbul": "^0.5.0",
+    "gulp-jscs": "^1.1.2",
+    "gulp-jshint": "^1.8.4",
+    "gulp-load-plugins": "^0.6.0",
+    "gulp-mocha": "^1.1.0",
+    "gulp-plumber": "^0.6.5",
+    "gulp-util": "^3.0.1",
+    "jshint-stylish": "^0.4.0",
+    "require-resolve": "0.0.2",
+    "should": "^4.0.4"
+  },
+  "bin": {
+    "coding": "cli.js"
+  },
+  "scripts": {
+    "coveralls": "gulp test && cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test": "gulp test"
+  }
+}
