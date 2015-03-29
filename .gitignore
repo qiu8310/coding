@@ -1,4 +1,4 @@
-node_modules/
+/node_modules
 temp/
 coverage/
 npm-debug.log

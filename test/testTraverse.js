@@ -1,6 +1,7 @@
 var should = require('should'),
   path = require('path'),
   _ = require('lodash'),
+  fs = require('fs'),
   traverse = require('../src/lib/traverse');
 
 describe('traverse', function () {
@@ -33,9 +34,9 @@ describe('traverse', function () {
   describe('#cache feature', function() {
     before(function() {
       this.mainFile = join(root, 'abc.js');
-      this.items = traverse(this.mainFile);
 
       this.moduleRoot = join(__dirname, 'res', 'node_modules');
+
       this.moduleAsFile = join(this.moduleRoot, 'a', 'a.js');
       this.moduleBsFile = join(this.moduleRoot, 'b', 'index.js');
       this.moduleCsFile = join(this.moduleRoot, 'c', 'index.js');
@@ -44,6 +45,8 @@ describe('traverse', function () {
       this.moduleAEsFile = join(this.moduleRoot, 'a', eBase);
       this.moduleBEsFile = join(this.moduleRoot, 'b', eBase);
       this.moduleCEsFile = join(this.moduleRoot, 'c', eBase);
+
+      this.items = traverse(this.mainFile);
     });
 
     after(function() {
