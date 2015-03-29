@@ -19,7 +19,7 @@ function rename(filePath, opts) {
     res = path.basename(filePath);
   }
   res = res.replace(/^\/|\.[^\.]+$/g, '');
-  return res.split('/').map(_.camelCase).join('.');
+  return res.split('/').map(function(w) { return w[0] + _.camelCase(w.slice(1)); }).join('.');
 }
 
 function removeRequire(ast, filePath, opts) {
