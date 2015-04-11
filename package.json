@@ -1,7 +1,7 @@
 {
   "name": "coding",
   "description": "分析单个 Node 文件，解析其依赖，并将依赖及原文件合并成一个与 Node 无关的文件",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/qiu8310/coding",
   "bugs": "https://github.com/qiu8310/coding/issues",
   "license": "MIT",

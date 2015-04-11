@@ -31,4 +31,14 @@ describe('refactor', function () {
     refactor(join(root, 'req-3.js')).should.be.eql("(function () {\n    function b(a) {\n        return a + 1;\n    }\n    G.req3 = G.fn;\n}());");
     refactor(join(root, 'req-4.js')).should.be.eql("(function () {\n    function b() {\n        var a = 1;\n        return a + 1;\n    }\n    G.req4 = G.fn;\n}());");
   });
+
+  it('require process', function() {
+    refactor(join(root, 'req-1.js'), {
+      transform: function() { return 'module.exports = 1;' }
+    }).should.be.eql('G.req1 = 1;');
+
+    refactor(join(root, 'req-1.js'), {
+      transform: function() {}
+    }).should.be.eql("G.req1 = G.fn(1, 2);");
+  });
 });

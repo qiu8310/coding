@@ -51,7 +51,17 @@ gulp.task('bump', ['test'], function () {
 });
 
 gulp.task('watch', ['test'], function () {
-  gulp.watch(paths.watch, ['test']);
+  gulp.watch(paths.watch, function() {
+    require('child_process').spawn('gulp', ['test'], {
+      env: process.env,
+      cwd: process.cwd(),
+      stdio: [
+        process.stdin,
+        process.stdout,
+        process.stderr
+      ]
+    });
+  });
 });
 
 gulp.task('test', ['lint', 'istanbul']);

@@ -223,8 +223,9 @@ module.exports = function(filePath, opts, saveExport) {
   //filePath = path.normalizePathSeparate(path.resolve(filePath));
   opts = opts || {};
   opts.global = opts.global || 'G';
+  opts.hideRangeAndLoc = true;
 
-  var ast = helper.getFileAST(filePath, true);
+  var ast = helper.getFileAST(filePath, opts);
 
   //require('fs').writeFile(filePath.replace(/\.js$/, '.json'), JSON.stringify(ast, null, 2));
 

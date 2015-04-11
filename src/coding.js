@@ -18,6 +18,7 @@ module.exports = function(filePath, opts) {
   opts = _.assign({
     global: 'G',
     rename: null,
+    transform: null,  // should be function
     addFilePathComment: true,
     saveMainExport: false // 是否保留主文件中的 module.exports
   }, opts || {});
