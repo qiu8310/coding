@@ -19,6 +19,7 @@ program
     throw new Error('Transform should be function');
   })
   .option('-g, --global <name>', 'Global namespace')
+  .option('--no-global', 'Disable global namespace')
   .option('-c, --comment', 'Add file path comment')
   .option('-e, --export', 'Save main file\'s export')
   .parse(process.argv);
@@ -27,9 +28,11 @@ if (!program.args.length) {
   program.help();
 } else {
   var opts = {};
-  if (program.global) {
+
+  if (typeof program.global === 'string' || program.global === false) {
     opts.global = program.global;
   }
+
   opts.transform = program.transform;
   opts.addFilePathComment = program.comment;
   opts.saveMainExport = program.export;

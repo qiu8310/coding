@@ -6,6 +6,9 @@
 * 为什么不用 [browserify](http://browserify.org/) 或 [webmake](https://github.com/medikoo/modules-webmake)?
 
 > 因为它们编译出的文件很丑，而且添加了很多多余的代码。
+
+## 已经有 [rollup](https://github.com/rollup/rollup) 和 [jspm](https://github.com/jspm/jspm-cli) 了，所以放弃此项目！
+
   
 * `coding` 有什么特点？
   

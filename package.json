@@ -44,7 +44,6 @@
     "gulp-plumber": "^0.6.5",
     "gulp-util": "^3.0.1",
     "jshint-stylish": "^0.4.0",
-    "require-resolve": "0.0.2",
     "should": "^4.0.4"
   },
   "bin": {

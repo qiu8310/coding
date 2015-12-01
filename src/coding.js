@@ -34,7 +34,12 @@ module.exports = function(filePath, opts) {
 
   //traverse(filePath).forEach(function(group) {
   var group = traverse(filePath)[0];
-  var content = [];
+  var content = [], start = '', end = '';
+  if (!opts.global) {
+    start = '(function () {' + EOL;
+    end = EOL + '})();' + EOL;
+    opts.global = '_G';
+  }
   content.push('var ' + opts.global + ' = {};' + EOL);
 
   group.deepDepends.forEach(function(f) {
@@ -42,6 +47,6 @@ module.exports = function(filePath, opts) {
   });
   content.push(fileComment(group.value) + refactor(group.value, opts, opts.saveMainExport) + EOL);
 
-  return content.join(EOL);
+  return start + content.join(EOL) + end;
   //});
 };
